@@ -6,7 +6,7 @@ Step 1 : First thing you should do is install streamlit with this in you command
 Step 2 : After a succesful installation you should copy the code and paste it only in a .py file (any file than .py will not be able to run the program)
 Step 3 : Then open your command prompt from the folder where you saved your file and write this code - streamlit run file_name.py  (replace file_name with the name you saved your file with )
 
-Well that was all from my side, As I'm still learning machine learning and all this, I am new as myself in this platform so if you have any sufggestion for me please contact me through discussion
+Well that was all from my side, As I'm still learning machine learning and all this, I am new as myself in this platform so if you have any suggestion for me please contact me through discussion
 and you can check out some of my other work also, I have done some awesome project 
 
 Thank you 
