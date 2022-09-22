@@ -11,7 +11,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression,SGDClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import make_blobs,make_classification,make_gaussian_quantiles,make_circles,make_moons
-from sklearn.metrics import accuracy_score,precision_score,r2_score
+from sklearn.metrics import accuracy_score,precision_score,f1_score
 
 
 def make_graph(datas,ax):
@@ -184,9 +184,9 @@ if st.sidebar.button('Run'):
     plt.xlabel('Col1')
     plt.ylabel('Col2')
     origin = st.pyplot(fig)
-    st.subheader('Accuracy of Logistic :'+ str(round(accuracy_score(y_test,y_pred),2)))
-    st.subheader('Precision Of Logistic :'+str(round(precision_score(y_test,y_pred,average='weighted'),2)))
-    st.subheader('R2 Score  :'+ str(round(r2_score(y_test,y_pred),2)))
+    st.subheader('Accuracy of Model :'+ str(round(accuracy_score(y_test,y_pred),2)))
+    st.subheader('Precision Of Model :'+str(round(precision_score(y_test,y_pred,average='weighted'),2)))
+    st.subheader('F1 Score  :'+ str(round(f1_score(y_test,y_pred),2)))
     st.balloons()
     # st.snow()
     st.sidebar.balloons()

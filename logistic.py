@@ -28,7 +28,7 @@ def make_meshgrid():
     return XX,yy,input_arr
 
 
-plt.style.use('fivethirtyeight')
+plt.style.use('seaborn-whitegrid')
 
 st.sidebar.markdown('LOGISTIC Regression Classifier')
 
