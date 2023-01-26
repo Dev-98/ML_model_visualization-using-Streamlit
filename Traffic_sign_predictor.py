@@ -1,7 +1,7 @@
 from numpy import argmax, array, expand_dims
 from pandas import read_csv
 import streamlit as st
-from PIL import Image,ImageTk
+from PIL import Image
 from keras.models import load_model
 
 model = load_model('C:/Users/Dev Gupta/Desktop/Jupyter/Projects (ML-DS)/Traffic Sign pred/traffic_classifier.h5')
