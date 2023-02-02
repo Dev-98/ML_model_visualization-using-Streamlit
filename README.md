@@ -12,4 +12,13 @@ Step 3 : Then open your command prompt from the folder where you saved your file
 Well that was all from my side, As I'm still learning machine learning and all this, I am new as myself in this platform so if you have any suggestion for me please contact me through discussion
 and you can check out some of my other work also, I have done some awesome project 
 
+
+
+
+# Logistic classification : -\
+
+https://dev-98-streamlit-model-visualization--logistic-dier4c.streamlit.app/
+
+
+
 Thank you :)
