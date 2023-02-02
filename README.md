@@ -15,7 +15,7 @@ and you can check out some of my other work also, I have done some awesome proje
 
 
 
-# Logistic classification : -\
+# Logistic classification :-}
 
 https://dev-98-streamlit-model-visualization--logistic-dier4c.streamlit.app/
 
