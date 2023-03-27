@@ -51,7 +51,7 @@ def make_meshgrid():
     return xx,yy,zz
 
 # print(plt.style.available)
-plt.style.use('grayscale')
+plt.style.use('Solarize_Light2')
 
 st.title('Bagging classifier')
 
@@ -71,7 +71,7 @@ with st.sidebar:
     boot = bool(form.radio('Bootstrap',('True','False')))
     oob = bool(form.radio('OOB Score',('True','False'),1))
     form.form_submit_button()
-    st.write('   ')
+    st.write(' Make sure to click Submit after every change ')
     st.write('   ')
 
 
@@ -92,7 +92,7 @@ if  algo == 'Logistic Regression':
         solver = st.selectbox(
         'Solver',
         ('lbfgs','newton-cg', 'liblinear', 'sag', 'saga'))
-        max_iter = int(st.slider('Max_iter',1,500,100))
+        max_iter = int(st.slider('Max_iter',1,500,step=100))
 
     clf = LogisticRegression(penalty=penalty,C=c,solver=solver,multi_class='multinomial',max_iter=max_iter)
     
@@ -106,7 +106,7 @@ elif algo == 'K-Nearest Neighbors':
     with st.sidebar:
         st.markdown('Hyperparam of KNN')
 
-        n_neigh = st.slider('N_neighbour',1,10,5)
+        n_neigh = st.slider('N_neighbour',1,10,step=5)
         weigh = st.radio('Weights',('uniform','distance'),0)
         algor  = st.selectbox('Algorithms',('auto','ball_tree','kd_tree','brute'))
     
@@ -117,9 +117,9 @@ elif algo == 'Decision Tree':
     
     with st.sidebar:
 
-        st.markdown('Hyperparam of DT')
+        st.markdown('Hyperparam of Decision Tree')
 
-        max_d = st.number_input('Max_depth',10,500,100)
+        max_d = st.number_input('Max_depth',10,500,step=100)
         crite = st.select_slider('Citerion',('gini','entropy','log_loss'))
         splite = st.radio('Splitter',('best','random'))
         max_feat = st.selectbox('Max_features_',(None,'sqrt','log2')) 
@@ -145,10 +145,10 @@ elif algo == 'Random Forest':
     with st.sidebar:
         
         st.markdown('Hyperparam of RNF')
-        max_de = st.number_input('Max_depth_',10,500,100)
+        max_de = st.number_input('Max_depth_',10,500,step=100)
         crit = st.select_slider('Citerion_',('gini','entropy','log_loss'))
         max_fea = st.selectbox('max_features',(None,'sqrt','log2')) 
-        n_est = st.number_input('N_estimators',1,500,10)
+        n_est = st.number_input('N_estimators',1,500,step=10)
     
     clf = RandomForestClassifier(max_depth=max_de, criterion=crit, max_features=max_fea, n_estimators=n_est)
    
@@ -172,8 +172,8 @@ elif algo == 'SGDclassifier':
    
    
 
-st.sidebar.write('Press this button to run the algo')
-if st.sidebar.button('Run'):
+st.write('Press this button to run the algo')
+if st.button('Run'):
 
     vot = BaggingClassifier(clf,n_estimators=estm,max_samples=samp,max_features=feat,bootstrap=boot)
     vot.fit(X_train,y_train)

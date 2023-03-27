@@ -22,13 +22,13 @@ st.sidebar.markdown('Regression Problem')
 st.header('Graph representation')
 
 regressor = st.sidebar.selectbox('Regressor',('Ridge','Lasso','Elasticnet'))
-noise = float(st.number_input('Noise in data',float(0.0),float(10)))
+noise = float(st.number_input('Noise in data',0,100))
 
 
 alpha = float(st.sidebar.number_input('alpha',1))
 max_iter = st.sidebar.slider('max_iter',10,500)
 tol = st.sidebar.number_input('tol',(1*np.exp(-3)))
-postive = st.sidebar.selectbox('Positive',('Yes','No'))
+postive = st.sidebar.selectbox('Positive',(True,False))
 
 fig,axs = plt.subplots(figsize=(5,4))
 X,y = data(axs,noise)
@@ -38,7 +38,7 @@ original = st.pyplot(fig)
 
 if regressor == 'Ridge':
 
-    solve = st.sidebar.selectbox('solver',('auto', '‘svd’', '‘cholesky’', '‘lsqr’', '‘sparse_cg’', '‘sag’', '‘saga’', 'lbfgs'),)
+    solve = st.sidebar.selectbox('solver',('auto', 'svd', 'cholesky', 'lsqr', 'sparse_cg', 'sag', 'saga', 'lbfgs'),)
     if st.sidebar.button('Run'):
     
         rid = Ridge(alpha=alpha,max_iter=max_iter,tol=tol,positive=postive,solver=solve)
